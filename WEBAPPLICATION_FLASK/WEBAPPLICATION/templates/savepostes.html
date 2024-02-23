@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Cropper</title>
+    <link rel="stylesheet" href="https://unpkg.com/cropperjs@1.5.12/dist/cropper.min.css">
+</head>
+<body>
+
+<input type="file" id="inputImage" accept="image/*">
+<br>
+<div>
+    <img id="croppedImage" alt="Cropped Image">
+</div>
+<br>
+<button onclick="saveCroppedImage()">Save</button>
+
+<script src="https://unpkg.com/cropperjs@1.5.12/dist/cropper.min.js"></script>
+<script>
+    var cropper;
+
+    document.getElementById('inputImage').addEventListener('change', function (e) {
+        var reader = new FileReader();
+        reader.onload = function (event) {
+            document.getElementById('croppedImage').src = event.target.result;
+            cropper = new Cropper(document.getElementById('croppedImage'), {
+                aspectRatio: 1,
+                viewMode: 1,
+            });
+        };
+        reader.readAsDataURL(e.target.files[0]);
+    });
+
+    function saveCroppedImage() {
+        var canvas = cropper.getCroppedCanvas();
+        var dataURL = canvas.toDataURL();
+
+        // Send the dataURL to Flask server for saving
+        fetch('/savepostdb', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ dataURL: dataURL }),
+        })
+        alert ("posting done go back and refresh page");
+        //.then(response => response.json())
+        //.then(data => {
+        //    console.log('Image saved successfully:', data.filename);
+        //})
+        //.catch(error => {
+        //    console.error('Error saving image:', error);
+        //});
+    }
+</script>
+
+</body>
+</html>

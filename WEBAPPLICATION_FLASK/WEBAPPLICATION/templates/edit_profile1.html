@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    
+    <link rel="icon" type="image/png" href="{{url_for('static',filename='img/emolhead.png')}}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='reset.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='mainstyle.css') }}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+      h4,h5{
+        color: white;
+      }
+      .form-control{
+        background-color: rgb(27, 27, 27);
+        color: gray;
+        border: 0cap;
+        width: 200px;
+      }
+      .mobile,.desktop{
+            background-color: rgb(35, 35, 35);
+      }
+      .image{
+            width: 80px;
+            height: 40px;
+      }
+      img{
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+      }
+
+      body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      }
+
+    #imageInput {
+        margin-bottom: 20px;
+    }
+
+    #imageContainer {
+        width: 100%;
+        text-align: center;
+    }
+
+    #selectedImage {
+        max-width: 100%;
+        max-height: 400px;
+    }
+    </style>
+  
+  <title>EDIT</title>
+  
+  </head>
+
+  <body style="background-color: rgb(0, 0, 0);">
+
+    <header class="desktop">
+      <div class="top-container">
+          <div class="top-logo">
+              <img class="image" src="{{ url_for('static', filename='logo.png') }}" >
+          </div>
+          <div class="top-icons">
+              <ion-icon  name="paper-plane-outline"></ion-icon>
+          </div>
+      </div>
+    </header>
+
+    <header class="mobile">
+      <img style="padding-left: 5%;" class="image" src="{{ url_for('static', filename='logo.png') }}" >
+      <p></p>
+    </header>
+
+    <br><br><br><div class="container">
+      <h4><u><b>EDIT YOUR PROILE</b></u></h4>
+      <!-- Section: Split screen -->
+<section class="">
+
+  <div class="container-fluid">
+    <form action="save" method="post">
+        <div class="row">
+
+          <div class="col-lg-6">
+
+          <br><br><br><div id="imageContainer">
+              <img id="selectedImage" alt="Selected Image" src="./static/profile_images/profileimage.png">
+          </div><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+              <a href="crop_image" class="btn btn-success">select image</a>
+
+
+
+
+          </div>
+
+          <div class="col-lg-6 vh-100">
+
+              <br><h5><u>Username: </u></h5>
+              <input class="form-control" style="background-color: black;" type="text" value="{{username}}" name="username" readonly>
+              <h5><u>Nickname: </u></h5>
+              <input class="form-control" type="text" value="{{nickname}}" name="nickname" required="">
+              <h5><u>BIO: </u></h5>
+              <textarea style="background-color: rgb(27, 27, 27);color: gray;" name="bio" rows="5" cols="50">{{bio}}</textarea>
+              <h5><u>Email ID: </u></h5>
+              <label style="background-color: black;color: gray;">{{emailid}}</label><br><br>
+              <!--<input class="btn btn-success" type="submit" value="SAVE">-->
+              <input class="btn btn-success" type="submit" value="Save">
+
+          </div>
+        </div>
+    </form>
+  </div>
+
+</section>
+<!-- Section: Split screen -->
+      <!---->
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Login</title>
+        <link rel="icon" type="image/png" href="{{url_for('static',filename='img/emolhead.png')}}">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&amp;display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <link href="{{ url_for('static', filename='css') }}" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='font-awesome.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <script defer="" referrerpolicy="origin" src="{{ url_for('static', filename='js_files/s.js.download') }}"></script>
+        <script nonce="33fd987d-eb3f-4816-95dd-7b008647d794">(function(w,d){!function(bb,bc,bd,be){bb[bd]=bb[bd]||{};bb[bd].executed=[];bb.zaraz={deferred:[],listeners:[]};bb.zaraz.q=[];bb.zaraz._f=function(bf){return async function(){var bg=Array.prototype.slice.call(arguments);bb.zaraz.q.push({m:bf,a:bg})}};for(const bh of["track","set","debug"])bb.zaraz[bh]=bb.zaraz._f(bh);bb.zaraz.init=()=>{var bi=bc.getElementsByTagName(be)[0],bj=bc.createElement(be),bk=bc.getElementsByTagName("title")[0];bk&&(bb[bd].t=bc.getElementsByTagName("title")[0].text);bb[bd].x=Math.random();bb[bd].w=bb.screen.width;bb[bd].h=bb.screen.height;bb[bd].j=bb.innerHeight;bb[bd].e=bb.innerWidth;bb[bd].l=bb.location.href;bb[bd].r=bc.referrer;bb[bd].k=bb.screen.colorDepth;bb[bd].n=bc.characterSet;bb[bd].o=(new Date).getTimezoneOffset();if(bb.dataLayer)for(const bo of Object.entries(Object.entries(dataLayer).reduce(((bp,bq)=>({...bp[1],...bq[1]})),{})))zaraz.set(bo[0],bo[1],{scope:"page"});bb[bd].q=[];for(;bb.zaraz.q.length;){const br=bb.zaraz.q.shift();bb[bd].q.push(br)}bj.defer=!0;for(const bs of[localStorage,sessionStorage])Object.keys(bs||{}).filter((bu=>bu.startsWith("_zaraz_"))).forEach((bt=>{try{bb[bd]["z_"+bt.slice(7)]=JSON.parse(bs.getItem(bt))}catch{bb[bd]["z_"+bt.slice(7)]=bs.getItem(bt)}}));bj.referrerPolicy="origin";bj.src="/cdn-cgi/zaraz/s.js?z="+btoa(encodeURIComponent(JSON.stringify(bb[bd])));bi.parentNode.insertBefore(bj,bi)};["complete","interactive"].includes(bc.readyState)?zaraz.init():bb.addEventListener("DOMContentLoaded",zaraz.init)}(w,d,"zarazData","script");})(window,document);</script>
+    </head>
+
+    <body class="img js-fullheight" style="background-color: rgb(22, 22, 22); height: 854px;">
+        <section class="ftco-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-6 text-center mb-5">
+                        <h2 class="heading-section">LOGIN HERE</h2>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="login-wrap p-0">
+                            <div>
+                                {%if errormsg=='uname_password'%}
+                                <p style="color: red;" class="w-100 text-center">INVALIED USERNAME OR PASSWORD</p>
+                                {%else%}
+                                <p></p>
+                                {%endif%}
+                            </div>
+                            <form method="post" action="logindb" class="signin-form">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Username" name="username" required="" fdprocessedid="e7yaqg">
+                                </div>
+                                <div class="form-group">
+                                    <input id="password-field" type="password" class="form-control" placeholder="Password" name="password" required="" fdprocessedid="2t5hus">
+                                    <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="form-control btn btn-primary submit px-3" fdprocessedid="h6295l">Login</button>
+                                </div>
+                                <div class="form-group d-md-flex">
+                                    <div class="w-50">
+                                        <label class="checkbox-wrap checkbox-primary">Remember Me
+                                            <input type="checkbox" checked="">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                    <div class="w-50 text-md-right">
+                                        <a href="forgetpassword" style="color: #fff">Forgot Password</a>
+                                    </div>
+                                </div>
+                            </form>
+                            <p class="w-100 text-center">— Or Sign In With —</p>
+                            <div class="social d-flex text-center">
+                                <a href="Signup" class="px-2 py-2 mr-md-1 rounded"> Create Account</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script src="{{ url_for('static', filename='js_files/jquery.min.js.download') }}"></script>
+        <script src="{{ url_for('static', filename='js_files/popper.js.download') }}"></script>
+        <script src="{{ url_for('static', filename='js_files/bootstrap.min.js.download') }}"></script>
+        <script src="{{ url_for('static', filename='js_files/main.js.download') }}"></script>
+        <script defer="" src="{{ url_for('static', filename='js_files/v84a3a4012de94ce1a686ba8c167c359c1696973893317') }}" integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA==" data-cf-beacon="{&quot;rayId&quot;:&quot;820618f9cb403223&quot;,&quot;version&quot;:&quot;2023.10.0&quot;,&quot;token&quot;:&quot;cd0b4b3a733644fc843ef0b185f98241&quot;}" crossorigin="anonymous"></script>
+    </body>
+</html>
