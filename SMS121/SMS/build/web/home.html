@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<header>
+		<h2 class="logo">STUDENT MANAGEMENT SYSTEM</h2>
+		<nav class="navigation">
+			<button class="btnstudentLogin-popup">Student Login</button>
+			<button class="btnstaffLogin-popup">Staff Login</button>
+			<button class="btnadminLogin-popup">Admin Login</button>
+		</nav>
+	</header>
+
+	<div class="wrapper">
+		<span class="icon-close"><ion-icon name="close"></ion-icon>
+		</span>
+
+		<div class="form-box studentlogin">
+			<h2>Student Login</h2>
+			<form action="StudentLoginDB.jsp">
+				<div class="input-box">
+					<span class="icon"><ion-icon name="mail"></ion-icon></span>
+					<input type="value" name="email" required>
+					<label>Student ID</label>
+				</div>
+				<div class="input-box">
+					<span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                                        <input type="password" name="psw" required>
+					<label>Password</label>
+				</div>
+				<div class="remember-forgot">
+					<label><input type="checkbox">Remember me</label>
+					<a href="#">Forgot Password?</a>
+				</div>
+				<button type"submit" class="btn">Login</button>
+				<div class="login-register">
+					<p><a href="#" class="login-link"></a></p>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<div class="wrapper1">
+		<span class="icon-close1"><ion-icon name="close"></ion-icon>
+		</span>
+
+		<div class="form-box stafflogin">
+			<h2>Staff Login</h2>
+			<form action="StaffLoginDB.jsp">
+				<div class="input-box">
+					<span class="icon"><ion-icon name="mail"></ion-icon></span>
+					<input type="value" name="email" required>
+					<label>Staff ID</label>
+				</div>
+				<div class="input-box">
+					<span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                                        <input type="password" name="psw" required>
+					<label>Password</label>
+				</div>
+				<div class="remember-forgot">
+					<label><input type="checkbox">Remember me</label>
+					<a href="#">Forgot Password?</a>
+				</div>
+				<button type"submit" class="btn1">Login</button>
+				<div class="login-register">
+					<p><a href="#" class="login-link"></a></p>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<div class="wrapper2">
+		<span class="icon-close2"><ion-icon name="close"></ion-icon>
+		</span>
+		<div class="form-box adminlogin">
+			<h2>Admin Login</h2>
+			<form action="adminLogin.jsp">
+				<div class="input-box">
+					<span class="icon"><ion-icon name="mail"></ion-icon></span>
+					<input type="value" name="uname" required>
+					<label>Admin</label>
+				</div>
+				<div class="input-box">
+					<span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+					<input type="password" name="psw" required>
+					<label>Password</label>
+				</div>
+				<div class="remember-forgot">
+					<label><input type="checkbox">Remember me</label>
+					<a href="#">Forgot Password?</a>
+				</div>
+				<button type="submit" class="btn2">Login</button>
+				<div class="login-register">
+					<p><a href="#" class="login-link"></a></p>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<script src="script.js"></script>
+	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

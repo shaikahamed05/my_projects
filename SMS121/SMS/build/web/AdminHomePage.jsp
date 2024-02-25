@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Rubik',swap;
+}
+
+.logo{
+	font-size: 2em;
+	color: #fff;
+	user-select:none;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+
+
+
+</style>
+</head>
+<body bgcolor="#000000">
+</br><center><h1 class="logo">Student Management System</h1></center></br>
+<ul>
+    <li><a class="active" href="AdminHomePage.jsp">Home</a></li>
+  <li><a href="addStaff.jsp">AddStaff</a></li>
+  <li><a href="viewStaff.jsp">ViewStaff</a></li>
+  <li><a href="addStudent.jsp">AddStudent</a></li>
+  <li><a href="viewStudent.jsp">ViewStudent</a></li>
+  <li style="float:right"><a href="home.html">Logout</a></li>
+</ul>
+
+</body>
+</html>
+
+
